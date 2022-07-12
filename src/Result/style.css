@@ -1,0 +1,19 @@
+.result__text {
+    font-size: 30px;
+    color: teal;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+@media(max-width: 656px) {
+    .result__text {
+        display: inline-block;
+        max-width: 100%
+    }
+}
+
+.result__title {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
