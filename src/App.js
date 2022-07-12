@@ -2,12 +2,13 @@ import Result from "./Result";
 import CurrencySelect from "./CurrencySelect";
 import CurrentRate from "./CurrentRate";
 import EnterAmount from "./EnterAmount";
+import Header from "./Header";
 
 function App() {
   return (
     <div className="container">
       <form>
-        <h1 className="form__header">Przelicznik walut</h1>
+        <Header />
         <CurrencySelect />
         <CurrentRate />
         <EnterAmount />
