@@ -3,18 +3,18 @@ import CurrencySelect from "./CurrencySelect";
 import CurrentRate from "./CurrentRate";
 import EnterAmount from "./EnterAmount";
 import Header from "./Header";
+import Form from "./Form";
 
 function App() {
   return (
     <div className="container">
-      <form>
-        <Header />
-        <CurrencySelect />
-        <CurrentRate />
-        <EnterAmount />
-        <button className="form__button">Przelicz</button>
-        <Result />
-      </form>
+      <Form
+        title={<Header />}
+        firstLabel={<CurrencySelect />}
+        secondLabel={<CurrentRate />}
+        thirdLabel={<EnterAmount />}
+        resultText={<Result />}
+      />
     </div>
   );
 }
