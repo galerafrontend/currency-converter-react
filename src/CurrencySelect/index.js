@@ -1,6 +1,7 @@
 import "./style.css";
 
 const CurrencySelect = (props) => {
+    return(
     <label>
         <span className="label__text">
             Wybierz walutę:
@@ -12,6 +13,7 @@ const CurrencySelect = (props) => {
             <option>Funt brytyjski - GBP</option>
         </select>
     </label>
+    )
 };
 
 export default CurrencySelect;
