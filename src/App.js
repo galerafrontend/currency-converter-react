@@ -1,5 +1,6 @@
 import Result from "./Result";
 import CurrencySelect from "./CurrencySelect";
+import CurrentRate from "./CurrentRate";
 
 function App() {
   return (
@@ -7,12 +8,7 @@ function App() {
       <form>
         <h1 className="form__header">Przelicznik walut</h1>
         <CurrencySelect />
-        <label>
-          <span className="form__labelText">
-            Aktualny kurs w PLN:
-          </span>
-          <input className="form__field" type="number" name="exchangeRate" readOnly />
-        </label>
+        <CurrentRate />
         <label>
           <span className="form__labelText">
             Wpisz kwotę w wybranej walucie*:
