@@ -7,12 +7,12 @@
     color: white;
     padding: 10px;
     margin: 20px 0 10px 0;
-    transition: 0,3s;
+    transition: 0.3s;
 }
 
 .form__button:hover {
     background-color: hsl(180, 100%, 30%);
-    transform: scaleY(1.07) scaleX(1.07);
+    transform: scaleY(1.05) scaleX(1.05);
     cursor: pointer;
 }
 

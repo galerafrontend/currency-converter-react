@@ -4,10 +4,11 @@ import CurrentRate from "./CurrentRate";
 import EnterAmount from "./EnterAmount";
 import Header from "./Header";
 import Form from "./Form";
+import Container from "./Container";
 
 function App() {
   return (
-    <div className="container">
+    <Container>
       <Form
         title={<Header />}
         firstLabel={<CurrencySelect />}
@@ -15,7 +16,7 @@ function App() {
         thirdLabel={<EnterAmount />}
         resultText={<Result />}
       />
-    </div>
+    </Container>
   );
 }
 
