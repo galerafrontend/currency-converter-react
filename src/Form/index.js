@@ -1,8 +1,13 @@
 import "./style.css";
 
 const Form = ({ title, firstLabel, secondLabel, thirdLabel, resultText }) => {
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+    };
+
     return (
-        <form>
+        <form onSubmit={onFormSubmit}>
             {title}
             {firstLabel}
             {secondLabel}
