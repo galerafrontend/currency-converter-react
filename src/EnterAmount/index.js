@@ -1,17 +1,18 @@
 import "./style.css";
 
-const EnterAmount = (props) => {
+const EnterAmount = ({ amount, setAmount }) => {
     return (
         <label>
             <span className="label__text">
                 Wpisz kwotę w wybranej walucie*:
             </span>
-            <input 
-            className="label__field"
-            type="number" 
-            name="amount" 
-            step="0.01" min="0.01" 
-            required autoFocus />
+            <input
+                value={amount}
+                onChange={({ target }) => setAmount(target.value)}
+                className="label__field"
+                type="number"
+                step="0.01" min="0.01"
+                required autoFocus />
         </label>
     )
 };

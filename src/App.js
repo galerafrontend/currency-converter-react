@@ -13,6 +13,8 @@ function App() {
     { id: 3, name: "Funt brytyjski", shortName: "GSP", rate: "5,72" }
   ];
 
+  const [amount, setAmount] = useState("");
+
   return (
     <Container>
       <Form
@@ -23,6 +25,8 @@ function App() {
           />}
         secondLabel={
           <EnterAmount
+            amount={amount}
+            setAmount={setAmount}
           />}
         resultText={<Result
         />}
