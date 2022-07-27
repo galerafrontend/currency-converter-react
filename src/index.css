@@ -8,9 +8,12 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
+=======
+>>>>>>> 47224f56cbf9eccc8bc3bd29070f146f8b00918b
   min-height: 100vh;
   background-image: url(/public/images/backgroundImage.png);
   background-size: cover;
