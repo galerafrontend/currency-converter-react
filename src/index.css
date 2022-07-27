@@ -8,9 +8,6 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background-image: url(/public/images/backgroundImage.png);
   background-size: cover;
