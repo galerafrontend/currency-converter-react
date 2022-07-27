@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Form = ({ title, firstLabel, secondLabel, resultText }) => {
+const Form = ({ title, firstLabel, secondLabel}) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -14,7 +14,10 @@ const Form = ({ title, firstLabel, secondLabel, resultText }) => {
             <button className="form__button">
                 Przelicz
             </button>
-            {resultText}
+            <p>
+                <span className="formResult__title">Kwota po przeliczeniu:</span>
+                <span className="formResult__text" ></span>
+            </p>
         </form>
     )
 };

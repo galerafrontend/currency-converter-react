@@ -1,4 +1,3 @@
-import Result from "./Result";
 import CurrencySelect from "./CurrencySelect";
 import EnterAmount from "./EnterAmount";
 import Header from "./Header";
@@ -28,8 +27,6 @@ function App() {
             amount={amount}
             setAmount={setAmount}
           />}
-        resultText={<Result
-        />}
       />
     </Container>
   );
