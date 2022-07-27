@@ -1,12 +1,10 @@
 import Result from "./Result";
 import CurrencySelect from "./CurrencySelect";
-import CurrentRate from "./CurrentRate";
 import EnterAmount from "./EnterAmount";
 import Header from "./Header";
 import Form from "./Form";
 import Container from "./Container";
-
-
+import { useState } from "react";
 
 function App() {
   const currencies = [
@@ -15,19 +13,19 @@ function App() {
     { id: 3, name: "Funt brytyjski", shortName: "GSP", rate: "5,72" }
   ];
 
-
   return (
     <Container>
       <Form
         title={<Header />}
         firstLabel={
-        <CurrencySelect 
-        currencies={currencies}
-        />}
+          <CurrencySelect
+            currencies={currencies}
+          />}
         secondLabel={
-        <CurrentRate />}
-        thirdLabel={<EnterAmount />}
-        resultText={<Result />}
+          <EnterAmount
+          />}
+        resultText={<Result
+        />}
       />
     </Container>
   );
