@@ -18,10 +18,9 @@ const Form = ({ currencies, calculateResult, result, title, firstLabel, secondLa
       <p>
         <span className="formResult__title">Kwota po przeliczeniu:</span>
         {result !== undefined && (
-          <span className={
-            `formResult__text
-            ${result ? "" : "formResult__text--hidden"}`
-          }>
+          <span className="formResult__text"
+            hidden={result.amount === undefined}
+          >
             {result.amount} {result.currencyName} = {result.finalResult} PLN
           </span>
         )}
