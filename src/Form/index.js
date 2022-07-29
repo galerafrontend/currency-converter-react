@@ -16,7 +16,7 @@ const Form = ({ currencies, calculateResult, result, title, firstLabel, secondLa
         Przelicz
       </button>
       <p>
-        <span className="formResult__title">Kwota po przeliczeniu:</span>
+        <span className="formResult__title">Kwota po przeliczeniu w PLN:</span>
         {result !== undefined && (
           <span className="formResult__text"
             hidden={result.amount === undefined}
