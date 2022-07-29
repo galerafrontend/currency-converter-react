@@ -27,13 +27,6 @@
     font-weight: 700;
 }
 
-@media(max-width: 656px) {
-    .formResult__text {
-        display: inline-block;
-        max-width: 100%
-    }
-}
-
 .formResult__title {
     display: inline-block;
     margin-right: 10px;
