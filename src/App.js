@@ -4,7 +4,7 @@ import Header from "./Header";
 import Form from "./Form";
 import Container from "./Container";
 import { useState } from "react";
-
+import Clock from "./Clock";
 
 function App() {
   const currencies = [
@@ -24,6 +24,7 @@ function App() {
 
   return (
     <Container>
+      <Clock />
       <Form
         currencies={currencies}
         calculateResult={calculateResult}
