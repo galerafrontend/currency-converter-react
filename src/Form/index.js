@@ -1,6 +1,15 @@
 import "./style.css";
 
-const Form = ({ currencies, calculateResult, result, title, firstLabel, secondLabel, amount, currencyName, setCurrencyName }) => {
+const Form = ({
+  currencies,
+  calculateResult,
+  result,
+  title,
+  fieldSelect,
+  amountField,
+  amount,
+  currencyName,
+  setCurrencyName }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -10,8 +19,8 @@ const Form = ({ currencies, calculateResult, result, title, firstLabel, secondLa
   return (
     <form onSubmit={onFormSubmit}>
       {title}
-      {firstLabel}
-      {secondLabel}
+      {fieldSelect}
+      {amountField}
       <button className="form__button">
         Przelicz
       </button>
