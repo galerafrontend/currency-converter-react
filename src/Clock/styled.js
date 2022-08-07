@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Date = styled.div`
+export const Time = styled.div`
   display: flex;
   justify-content: end;
   font-family: 'Roboto Mono', monospace;

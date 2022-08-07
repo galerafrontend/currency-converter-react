@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Date } from "./styled";
+import { Time } from "./styled";
 
 const formattedDate = (date) => date.toLocaleDateString(
   undefined, {
@@ -31,11 +31,11 @@ const Clock = () => {
   }, []);
 
   return (
-    <Date>
+    <Time>
       Dzisiaj jest
       {" "}
       {formattedDate(date)},&nbsp;{formattedTime(date)}
-    </Date>
+    </Time>
   )
 };
 
