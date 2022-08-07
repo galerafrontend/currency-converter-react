@@ -1,11 +1,11 @@
-import "./style.css";
+import { Text, Select } from "./styled";
 
 const CurrencySelect = ({ currencies, currencyName, setCurrencyName }) => (
   <label>
-    <span className="label__text">
+    <Text>
       Wybierz walutę:
-    </span>
-    <select className="label__field"
+    </Text>
+    <Select
       value={currencyName}
       onChange={({ target }) => setCurrencyName(target.value)}
     >
@@ -15,7 +15,7 @@ const CurrencySelect = ({ currencies, currencyName, setCurrencyName }) => (
           {currency.name} - {currency.shortName}
         </option>
       ))}
-    </select>
+    </Select>
   </label>
 );
 
