@@ -1,4 +1,4 @@
-import "./style.css";
+import { Button, ResultText, ResultTitle } from "./styled";
 
 const Form = ({
   currencies,
@@ -21,17 +21,19 @@ const Form = ({
       {title}
       {fieldSelect}
       {amountField}
-      <button className="form__button">
+      <Button>
         Przelicz
-      </button>
+      </Button>
       <p>
-        <span className="formResult__title">Kwota po przeliczeniu w PLN:</span>
+        <ResultTitle>
+          Kwota po przeliczeniu w PLN:
+        </ResultTitle>
         {result !== undefined && (
-          <span className="formResult__text"
+          <ResultText
             hidden={result.amount === undefined}
           >
             {result.amount} {result.currencyName} = {result.finalResult} PLN
-          </span>
+          </ResultText>
         )}
       </p>
     </form>
