@@ -1,10 +1,10 @@
-import "./style.css";
+import { Title } from "./styled";
 
 const Header = (props) => {
     return (
-        <header className="header">
+        <Title>
             <h1>Przelicznik walut</h1>
-        </header>
+        </Title>
     )
 };
 
