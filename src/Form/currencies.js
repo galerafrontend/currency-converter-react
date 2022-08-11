@@ -5,12 +5,16 @@ export const currencies = [
     shortName: "EUR", 
     rate: 4.83 
   },
-  { id: 2, 
+
+  { 
+    id: 2, 
     name: "Dolar amerykański", 
     shortName: "USD", 
     rate: 4.82 
   },
-  { id: 3, 
+  
+  { 
+    id: 3, 
     name: "Funt brytyjski", 
     shortName: "GSP", 
     rate: 5.72 
