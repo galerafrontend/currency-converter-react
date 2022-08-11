@@ -1,15 +1,19 @@
+import CurrencySelect from "./CurrencySelect";
+import EnterAmount from "./EnterAmount";
+import Header from "./Header";
 import { Button, ResultText, ResultTitle } from "./styled";
+import { useState } from "react";
+import { currencies } from "./currencies";
 
-const Form = ({
-  currencies,
-  calculateResult,
-  result,
-  title,
-  fieldSelect,
-  amountField,
-  amount,
-  currencyName,
-  setCurrencyName }) => {
+const Form = () => {
+  const [result, setResult] = useState("");
+  const [amount, setAmount] = useState("");
+  const [currencyName, setCurrencyName] = useState("");
+
+  const calculateResult = (amount, currencyName) => {
+    const rate = currencies.find(({ shortName }) => shortName === currencyName).rate;
+    setResult({ finalResult: (amount * rate).toFixed(2), currencyName, amount })
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -18,9 +22,16 @@ const Form = ({
 
   return (
     <form onSubmit={onFormSubmit}>
-      {title}
-      {fieldSelect}
-      {amountField}
+      <Header />
+      <CurrencySelect
+        currencies={currencies}
+        currencyName={currencyName}
+        setCurrencyName={setCurrencyName}
+      />
+      <EnterAmount
+        amount={amount}
+        setAmount={setAmount}
+      />
       <Button>
         Przelicz
       </Button>
