@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MainContainer = styled.div`
+export const Container = styled.div`
   flex-basis: 700px;
   margin: 20px;
   padding: 20px 40px 20px 40px;

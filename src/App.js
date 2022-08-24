@@ -1,6 +1,6 @@
 import Form from "./Form";
-import Container from "./Container";
 import Clock from "./Clock";
+import { Container } from "./styled";
 
 function App() {
   return (
