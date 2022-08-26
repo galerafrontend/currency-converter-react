@@ -6,31 +6,29 @@ export const useLoadedCurrencies = () => {
     status: "pending",
     rates: "",
     date: "",
-    base: ""
   });
 
-useEffect(() => {
-  const downloadData = (async () => {
-    try {
-      const response = await axios.get('https://api.exchangerate.host/latest?base=PLN');
+  useEffect(() => {
+    const downloadData = (async () => {
+      try {
+        const response = await axios.get('https://api.exchangerate.host/latest?base=PLN');
 
-      setRatesData({
-        status: "succes",
-        base: response.data.base,
-        rates: response.data.rates,
-        date: response.data.date
-      });
+        setRatesData({
+          status: "succes",
+          rates: response.data.rates,
+          date: response.data.date
+        });
 
-    } catch (error) {
+      } catch (error) {
         setRatesData({
           status: "error"
         });
         console.error(error);
-    }
-  });
+      }
+    });
 
-  setTimeout(downloadData, 2000);
-}, []);
+    setTimeout(downloadData, 1000);
+  }, []);
 
-return ratesData;
+  return ratesData;
 };
