@@ -5,6 +5,8 @@ import { Button, ResultText, ResultTitle } from "./styled";
 import { useState } from "react";
 import { useLoadedCurrencies } from "./useLoadedCurrencies";
 import RatesInfo from "./RatesInfo";
+import ErrorInfo from "./ErrorInfo";
+import LoadingText from "./LoadingText";
 
 const Form = () => {
   const [result, setResult] = useState("");
@@ -26,38 +28,54 @@ const Form = () => {
     calculateResult(amount, currency);
   };
 
-  return (
-    <form onSubmit={onFormSubmit}>
-      <Header />
-      <CurrencySelect
-        currencies={currencies}
-        currency={currency}
-        setCurrency={setCurrency}
-      />
-      <EnterAmount
-        amount={amount}
-        setAmount={setAmount}
-      />
-      <Button>
-        Przelicz
-      </Button>
-      < RatesInfo 
-        date={currencies.date}
-      />
-      <p>
-        <ResultTitle>
-          Kwota po przeliczeniu:
-        </ResultTitle>
-        {result !== undefined && (
-          <ResultText
-            hidden={result.currency === undefined}
-          >
-            {result.sourceAmount} PLN = {result.targetAmount} {result.currency}
-          </ResultText>
-        )}
-      </p>
-    </form>
-  )
+  if (currencies.status === "succes") {
+    return (
+      <form onSubmit={onFormSubmit}>
+        <Header />
+        <CurrencySelect
+          currencies={currencies}
+          currency={currency}
+          setCurrency={setCurrency}
+        />
+        <EnterAmount
+          amount={amount}
+          setAmount={setAmount}
+        />
+        <Button>
+          Przelicz
+        </Button>
+        < RatesInfo
+          date={currencies.date}
+        />
+        <p>
+          <ResultTitle>
+            Kwota po przeliczeniu:
+          </ResultTitle>
+          {result !== undefined && (
+            <ResultText
+              hidden={result.currency === undefined}
+            >
+              {result.sourceAmount} PLN = {result.targetAmount} {result.currency}
+            </ResultText>
+          )}
+        </p>
+      </form>
+    )
+  } else if (currencies.status === "pending") {
+    return (
+      <form>
+        <Header />
+        <LoadingText />
+      </form>
+    )
+  } else if (currencies.status === "error") {
+    return (
+      <form>
+        <Header />
+        <ErrorInfo />
+      </form>
+    )
+  }
 };
 
 export default Form;
