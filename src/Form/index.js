@@ -3,21 +3,26 @@ import EnterAmount from "./EnterAmount";
 import Header from "./Header";
 import { Button, ResultText, ResultTitle } from "./styled";
 import { useState } from "react";
-import { currencies } from "./currencies";
+import { useLoadedCurrencies } from "./useLoadedCurrencies";
 
 const Form = () => {
   const [result, setResult] = useState("");
   const [amount, setAmount] = useState("");
-  const [currencyName, setCurrencyName] = useState("");
+  const [currency, setCurrency] = useState("");
+  const currencies = useLoadedCurrencies();
 
-  const calculateResult = (amount, currencyName) => {
-    const rate = currencies.find(({ shortName }) => shortName === currencyName).rate;
-    setResult({ finalResult: (amount * rate).toFixed(2), currencyName, amount })
+  const calculateResult = (amount, currency) => {
+    const rate = currencies.rates[currency];
+    setResult({
+      sourceAmount: amount,
+      targetAmount: (amount * rate).toFixed(2),
+      currency,
+    })
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    calculateResult(amount, currencyName);
+    calculateResult(amount, currency);
   };
 
   return (
@@ -25,8 +30,8 @@ const Form = () => {
       <Header />
       <CurrencySelect
         currencies={currencies}
-        currencyName={currencyName}
-        setCurrencyName={setCurrencyName}
+        currency={currency}
+        setCurrency={setCurrency}
       />
       <EnterAmount
         amount={amount}
@@ -37,13 +42,13 @@ const Form = () => {
       </Button>
       <p>
         <ResultTitle>
-          Kwota po przeliczeniu w PLN:
+          Kwota po przeliczeniu:
         </ResultTitle>
         {result !== undefined && (
           <ResultText
-            hidden={result.amount === undefined}
+            hidden={result.currency === undefined}
           >
-            {result.amount} {result.currencyName} = {result.finalResult} PLN
+            {result.sourceAmount} PLN = {result.targetAmount} {result.currency}
           </ResultText>
         )}
       </p>
