@@ -4,6 +4,7 @@ import Header from "./Header";
 import { Button, ResultText, ResultTitle } from "./styled";
 import { useState } from "react";
 import { useLoadedCurrencies } from "./useLoadedCurrencies";
+import RatesInfo from "./RatesInfo";
 
 const Form = () => {
   const [result, setResult] = useState("");
@@ -40,6 +41,9 @@ const Form = () => {
       <Button>
         Przelicz
       </Button>
+      < RatesInfo 
+        date={currencies.date}
+      />
       <p>
         <ResultTitle>
           Kwota po przeliczeniu:
