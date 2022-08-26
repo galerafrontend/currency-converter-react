@@ -1,20 +1,19 @@
 import { Text, Select } from "./styled";
 
-const CurrencySelect = ({ currencies, currencyName, setCurrencyName }) => (
+const CurrencySelect = ({ currencies, currency, setCurrency }) => (
   <label>
     <Text>
       Wybierz walutę:
     </Text>
     <Select
-      value={currencyName}
-      onChange={({ target }) => setCurrencyName(target.value)}
+      value={currency}
+      onChange={({ target }) => setCurrency(target.value)}
     >
-      <option />
-      {currencies.map(currency => (
-        <option key={currency.name} value={currency.shortName}>
-          {currency.name} - {currency.shortName}
+      {Object.keys(currencies.rates).map(currency =>
+        <option key={currency} value={currency}>
+          {currency}
         </option>
-      ))}
+      )}
     </Select>
   </label>
 );
