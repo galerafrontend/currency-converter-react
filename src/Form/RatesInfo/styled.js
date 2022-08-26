@@ -18,10 +18,18 @@ export const Link = styled.a`
   color: teal;
   font-weight: 700;
   font-family: 'Roboto Mono', monospace;
+
+  @media(max-width: 540px) {
+    padding-top: 5px;
+  }
 `;
 
 export const DateInfo = styled.span`
   font-weight: 700;
   color: teal;
   font-family: 'Roboto Mono', monospace;
+
+  @media(max-width: 540px) {
+    padding-top: 5px;
+  }
 `;
