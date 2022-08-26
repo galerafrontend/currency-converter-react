@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 
 export const useLoadedCurrencies = () => {
   const [ratesData, setRatesData] = useState({
-    status: "loading",
+    status: "pending",
+    rates: "",
+    date: "",
+    base: ""
   });
 
 useEffect(() => {
@@ -12,7 +15,7 @@ useEffect(() => {
       const response = await axios.get('https://api.exchangerate.host/latest?base=PLN');
 
       setRatesData({
-        status: "loaded",
+        status: "succes",
         base: response.data.base,
         rates: response.data.rates,
         date: response.data.date
