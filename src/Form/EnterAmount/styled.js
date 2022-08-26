@@ -4,6 +4,7 @@ export const Text = styled.span`
   display: inline-block;
   width: 180px;
   margin-right: 20px;
+  margin-top: 15px;
   padding: 10px;
 
   @media(max-width: 768px) {
