@@ -1,4 +1,8 @@
-html {
+import { createGlobalStyle } from "styled-components";
+import background from "./background.png";
+
+export const GlobaleStyle = createGlobalStyle`
+  html {
   box-sizing: border-box;
 }
 
@@ -12,7 +16,9 @@ html {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(/public/images/backgroundImage.png);
+  background-image: url("${background}");
   background-size: cover;
   background-position: center;
 }
+
+`;
