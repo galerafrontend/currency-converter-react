@@ -27,10 +27,11 @@ Remember that the field must be filled in otherwise the form will remind about i
 
 ## Technologies/Conventions I used
 Project is created with:
-- BEM
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+- project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React hooks
+- styleComponents
+- Custom hooks
+- axios
 ## Available Scripts
 
 In the project directory, you can run:
