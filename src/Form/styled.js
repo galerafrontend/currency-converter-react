@@ -4,27 +4,27 @@ export const Button = styled.button`
   width: 100%;
   border-radius: 5px;
   border: none;
-  background-color: teal;
+  background: ${({ theme }) => theme.color.teal};
   font-weight: 700;
-  color: white;
+  color: ${({ theme }) => theme.color.white};
   padding: 10px;
   margin: 20px 0 10px 0;
-  transition: 0.3s;
+  transition: filter 0.3s;
 
   &:hover {
-    background-color: hsl(180, 100%, 30%);
+    filter: brightness(120%);
     transform: scaleY(1.05) scaleX(1.05);
     cursor: pointer;
   }
 
   &:active {
-    background-color: hsl(180, 100%, 35%);
+    filter: brightness(140%);
   }
 `;
 
 export const ResultText = styled.span`
   font-size: 25px;
-  color: teal;
+  color: ${({ theme }) => theme.color.teal};
   text-decoration: underline;
   font-weight: 700;
 `;

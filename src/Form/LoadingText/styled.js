@@ -5,6 +5,6 @@ export const LoadingInfo = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  color: teal;
+  color: ${({ theme }) => theme.color.teal};
   padding-bottom: 15px;
 `;

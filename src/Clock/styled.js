@@ -5,6 +5,6 @@ export const Time = styled.div`
   justify-content: end;
   font-family: 'Roboto Mono', monospace;
   font-size: 15px;
-  color: hsl(0, 0%, 57%);
+  color: ${({ theme }) => theme.color.gray};
   padding-top: 10px;
 `;
