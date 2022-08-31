@@ -23,7 +23,6 @@ export const useLoadedCurrencies = () => {
         setRatesData({
           status: "error"
         });
-        console.error(error);
       }
     });
 
