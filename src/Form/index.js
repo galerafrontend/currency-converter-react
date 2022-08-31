@@ -28,47 +28,16 @@ const Form = () => {
     calculateResult(amount, currency);
   };
 
-  if (currencies.status === "succes") {
-    return (
-      <form onSubmit={onFormSubmit}>
-        <Header />
-        <CurrencySelect
-          currencies={currencies}
-          currency={currency}
-          setCurrency={setCurrency}
-        />
-        <EnterAmount
-          amount={amount}
-          setAmount={setAmount}
-        />
-        <Button>
-          Przelicz
-        </Button>
-        < RatesInfo
-          date={currencies.date}
-        />
-        <p>
-          <ResultTitle>
-            Kwota po przeliczeniu:
-          </ResultTitle>
-          {result !== undefined && (
-            <ResultText
-              hidden={result.currency === undefined}
-            >
-              {result.sourceAmount} PLN = {result.targetAmount} {result.currency}
-            </ResultText>
-          )}
-        </p>
-      </form>
-    )
-  } else if (currencies.status === "pending") {
+  if (currencies.status === "pending") {
     return (
       <form>
         <Header />
         <LoadingText />
       </form>
     )
-  } else if (currencies.status === "error") {
+  }
+
+  if (currencies.status === "error") {
     return (
       <form>
         <Header />
@@ -76,6 +45,39 @@ const Form = () => {
       </form>
     )
   }
+
+  return (
+    <form onSubmit={onFormSubmit}>
+      <Header />
+      <CurrencySelect
+        currencies={currencies}
+        currency={currency}
+        setCurrency={setCurrency}
+      />
+      <EnterAmount
+        amount={amount}
+        setAmount={setAmount}
+      />
+      <Button>
+        Przelicz
+      </Button>
+      < RatesInfo
+        date={currencies.date}
+      />
+      <p>
+        <ResultTitle>
+          Kwota po przeliczeniu:
+        </ResultTitle>
+        {result !== undefined && (
+          <ResultText
+            hidden={result.currency === undefined}
+          >
+            {result.sourceAmount} PLN = {result.targetAmount} {result.currency}
+          </ResultText>
+        )}
+      </p>
+    </form>
+  )
 };
 
 export default Form;
