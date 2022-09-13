@@ -20,5 +20,4 @@ export const GlobaleStyle = createGlobalStyle`
   background-size: cover;
   background-position: center;
 }
-
 `;
