@@ -8,7 +8,7 @@
 - [Available Scripts](#available-scripts)
 
 ## Demo
-https://eltair41.github.io/currency-converter-react/
+https://galerafrontend.github.io/currency-converter-react/
 
 ## General info
 This project is a simple example of currency converter. The converter is easy and plessent to use as well as you need only 3 steps to convert selected currency.
