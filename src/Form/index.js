@@ -59,14 +59,14 @@ const Form = () => {
         setAmount={setAmount}
       />
       <Button>
-        Przelicz
+        Convert
       </Button>
       < RatesInfo
         date={currencies.date}
       />
       <p>
         <ResultTitle>
-          Kwota po przeliczeniu:
+          Result:
         </ResultTitle>
         {result !== undefined && (
           <ResultText
