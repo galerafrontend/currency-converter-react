@@ -26,7 +26,7 @@ export const useLoadedCurrencies = () => {
       }
     });
 
-    setTimeout(downloadData, 1000);
+    setTimeout(downloadData, 2000);
   }, []);
 
   return ratesData;
