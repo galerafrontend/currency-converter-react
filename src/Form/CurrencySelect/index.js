@@ -3,7 +3,7 @@ import { Text, Select } from "./styled";
 const CurrencySelect = ({ currencies, currency, setCurrency }) => (
   <label>
     <Text>
-      Wybierz walutę:
+      Select currency:
     </Text>
     <Select
       value={currency}
