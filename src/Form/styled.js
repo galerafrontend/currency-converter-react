@@ -9,7 +9,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.color.white};
   padding: 10px;
   margin: 20px 0 10px 0;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 
   &:hover {
     filter: brightness(120%);
@@ -25,7 +25,7 @@ export const Button = styled.button`
 export const ResultText = styled.span`
   font-size: 25px;
   color: ${({ theme }) => theme.color.teal};
-  text-decoration: underline;
+  border-bottom: 2px solid ${({ theme }) => theme.color.teal};
   font-weight: 700;
 `;
 
