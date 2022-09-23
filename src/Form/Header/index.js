@@ -3,7 +3,7 @@ import { Title } from "./styled";
 const Header = (props) => {
     return (
         <Title>
-            <h1>Przelicznik walut</h1>
+            <h1>Currency converter</h1>
         </Title>
     )
 };
