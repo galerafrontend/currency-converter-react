@@ -3,14 +3,14 @@ import { Info, Link, DateInfo } from "./styled";
 const RatesInfo = ({ date }) => (
   <>
     <Info>
-      Kursy walut pobrane są z&nbsp;
-      <Link 
+      Exchange rates are taken from the&nbsp;
+      <Link
         href="https://exchangerate.host">
-          Europejskiego Banku Centralnego.
+        European Central Bank.
       </Link>
     </Info>
     <Info>
-      Atkualne na dzień:&nbsp; <DateInfo>{date}</DateInfo>
+      Valid for the day:&nbsp; <DateInfo>{date}</DateInfo>
     </Info>
   </>
 );
