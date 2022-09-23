@@ -1,9 +1,10 @@
-import { LoadingInfo } from "./styled";
+import { LoadingInfo, Spinner } from "./styled";
 
 const LoadingText = () => {
   return (
     <LoadingInfo>
-      Trwa ładowanie danych z Europejskiego Banku Centralnego ... 😁
+      Loading data from the European Central Bank ... 😁
+      <Spinner />
     </LoadingInfo>
   )
 };
