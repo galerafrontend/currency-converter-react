@@ -2,7 +2,7 @@ import { useCurrentDate } from "./useCurrentDate";
 import { Time } from "./styled";
 
 const formattedDate = (date) => date.toLocaleDateString(
-  undefined, {
+  "en", {
   weekday: "long",
   day: "numeric",
   month: "long",
@@ -10,7 +10,7 @@ const formattedDate = (date) => date.toLocaleDateString(
 );
 
 const formattedTime = (date) => date.toLocaleTimeString(
-  undefined, {
+  "en", {
   hour: "2-digit",
   minute: "2-digit",
   second: "2-digit",
@@ -22,7 +22,7 @@ const Clock = () => {
 
   return (
     <Time>
-      Dzisiaj jest
+      Today is
       {" "}
       {formattedDate(date)},&nbsp;{formattedTime(date)}
     </Time>
