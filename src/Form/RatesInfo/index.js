@@ -5,7 +5,7 @@ const RatesInfo = ({ date }) => (
     <Info>
       Exchange rates are taken from the&nbsp;
       <Link
-        href="https://exchangerate.host">
+        href="https://exchangerate.host" target="_blank" rel="noreferrer">
         European Central Bank.
       </Link>
     </Info>
