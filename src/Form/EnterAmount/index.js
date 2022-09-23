@@ -4,7 +4,7 @@ const EnterAmount = ({ amount, setAmount }) => {
   return (
     <label>
       <Text>
-        Kwota w zł*:
+        Amount in PLN*:
       </Text>
       <Input
         value={amount}
@@ -12,7 +12,7 @@ const EnterAmount = ({ amount, setAmount }) => {
         type="number"
         step="0.01" min="0.01"
         required autoFocus
-        placeholder="Wpisz kwotę w zł"
+        placeholder="Enter amount in PLN"
       />
     </label>
   )
